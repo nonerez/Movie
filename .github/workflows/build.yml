@@ -24,6 +24,7 @@ jobs:
       - name: Extract project
         run: |
           unzip MovieHub.zip
+          sed -i '/^import androidx.compose.foundation.background$/a import androidx.compose.foundation.isSystemInDarkTheme' MovieHub/app/src/main/java/com/example/moviehub/MainActivity.kt
           cd MovieHub
           curl -L https://services.gradle.org/distributions/gradle-8.7-bin.zip -o gradle.zip
           unzip -q gradle.zip
